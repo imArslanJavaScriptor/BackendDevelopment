@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const server = http.createServer((req, res) => {
   // console.log(req)
-  console.log(req.url, req.method, req.headers);
+  console.log(req.url, req.method);
   res.setHeader("Content-Type", "text/html");
   if (req.url === "/") {
     res.write(`
@@ -32,10 +32,30 @@ const server = http.createServer((req, res) => {
     req.url.toLowerCase() === "/submit-details" &&
     req.method === "POST"
   ) {
+    const body = []
     req.on("data", (chunk) => {
-      console.log(chunk.toString());
+      console.log(chunk);
+      body.push(chunk);
     });
-    fs.writeFileSync("user.txt", "HM-Arslan");
+
+    req.on("end", () => {
+      const fullBody = Buffer.concat(body).toString()
+      console.log(fullBody);
+      const params = new URLSearchParams(fullBody)
+      // const bodyObject = {}
+      // for(let [key, val] of params.entries()) {
+      //   bodyObject[key] = val;
+      // }
+
+      // Easy Way
+      const bodyObject = Object.fromEntries(params)
+      console.log(bodyObject)
+
+      // Write to file
+      const jsonData = JSON.stringify(bodyObject)
+      console.log(jsonData);
+      fs.writeFileSync("user-details.json", jsonData);
+    })
     res.statusCode = 302;
     res.setHeader("Location", "/");
     return res.end();
