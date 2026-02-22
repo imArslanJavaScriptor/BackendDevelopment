@@ -1,5 +1,6 @@
 const http = require("http");
-
+const fs = require("fs");
+ 
 const server = http.createServer((req, res) => {
   // console.log(req)
   console.log(req.url, req.method, req.headers);
@@ -12,7 +13,7 @@ const server = http.createServer((req, res) => {
       </head>
       <body>
       <h1>Welcome To Home</h1>
-      <form action="/s-bmit-details" method="POST">
+      <form action="/submit-details" method="POST">
       <input type="text" id="name" name="name" placeholder="Enter Your Name">
       <br><br>
       <label for="gender">Gender:</label>
@@ -20,13 +21,30 @@ const server = http.createServer((req, res) => {
       <label for="male">Male</label>
       <input type="radio" id="female" name="gender" value="female">
       <label for="female">Female</label>
+      <br><br>
       <button type="submit">Submit</button>
       </form>
       </body>
     </html>
       `);
     return res.end();
+  } else if(req.url.toLowerCase() === "/submit-details" && req.method === "POST") {
+    fs.writeFileSync('user.txt', "HM-Arslan")
+    res.statusCode = 302;
+    res.setHeader("Location", "/")
+    
   }
+     res.write(`
+    <html>
+      <head>
+      <title>Complete Coding</title>
+      </head>
+      <body>
+      <h1>Welcome To Home</h1>
+      </body>
+    </html>
+      `);
+    return res.end();
   // process.exit();
 });
 
