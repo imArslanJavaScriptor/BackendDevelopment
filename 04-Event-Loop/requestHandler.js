@@ -15,6 +15,6 @@ const requestHandler = (req, res) => {
   } else {
     pageNotFoundHandler(res)
   }
-};
+}; 
 
 module.exports = requestHandler;
