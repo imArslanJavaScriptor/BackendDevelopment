@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>airbnb Home</title>
+  <!-- Question -->
+  <!-- why im getting this css file even  i did not provide the exact path like ../public/home.css -->
+  <!-- <link rel="stylesheet" href="home.css"> -->
+  <link rel="stylesheet" href="/output.css">
+
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-[#FF5A5F] rounded-2xl flex items-center justify-center">
+          <span class="text-white text-3xl font-bold leading-none">A</span>
+        </div>
+        <span class="text-2xl font-semibold text-gray-900">airbnb</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+        <a href="#" class="hover:text-gray-900 transition">Stays</a>
+        <a href="#" class="hover:text-gray-900 transition">Experiences</a>
+        <a href="#" class="hover:text-gray-900 transition">Become a Host</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="/host/add-home"
+          class="px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-2xl transition">
+          Host your home
+        </a>
+        <button
+          class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
+          👤
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-24 text-center">
+    <h1 class="text-6xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
+      Welcome to Airbnb
+    </h1>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+      Find unique places to stay or earn money by hosting your home.
+    </p>
+
+    <!-- Main CTA Button -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/host/add-home"
+        class="bg-[#FF5A5F] hover:bg-[#FF4248] text-white text-lg font-semibold px-10 py-5 rounded-3xl transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+        <span>Become a Host</span>
+        <span class="text-2xl">🏠</span>
+      </a>
+
+      <a href="/search"
+        class="border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 text-lg font-semibold px-10 py-5 rounded-3xl transition-all duration-200">
+        Browse Homes
+      </a>
+    </div>
+  </div>
+
+  <!-- Quick Links / Features -->
+  <div class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition">
+        <div class="text-5xl mb-6">🏡</div>
+        <h3 class="text-2xl font-semibold mb-3">List your home</h3>
+        <p class="text-gray-600">
+          Turn your extra space into extra income. List your place and start earning today.
+        </p>
+        <a href="/host/add-home" class="inline-block mt-6 text-[#FF5A5F] font-semibold hover:underline">
+          Add your home →
+        </a>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition">
+        <div class="text-5xl mb-6">🔍</div>
+        <h3 class="text-2xl font-semibold mb-3">Find a stay</h3>
+        <p class="text-gray-600">
+          Discover unique homes, apartments, and experiences around the world.
+        </p>
+        <a href="/search" class="inline-block mt-6 text-[#FF5A5F] font-semibold hover:underline">
+          Browse stays →
+        </a>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition">
+        <div class="text-5xl mb-6">🌟</div>
+        <h3 class="text-2xl font-semibold mb-3">Travel with confidence</h3>
+        <p class="text-gray-600">
+          From verified hosts to secure payments, every booking is protected.
+        </p>
+        <a href="#" class="inline-block mt-6 text-[#FF5A5F] font-semibold hover:underline">
+          Learn more →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+      © 2026 Airbnb Clone • Made with ❤️ for learning
+    </div>
+  </footer>
+
+</body>
+
+</html>

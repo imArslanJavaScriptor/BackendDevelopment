@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "tailwind": "npx tailwindcss -i ./views/input.css -o ./public/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./views/input.css -o ./public/output.css --watch",
+    "start": "nodemon app.js & npm run tailwind"
   },
   "keywords": [],
   "author": "",
