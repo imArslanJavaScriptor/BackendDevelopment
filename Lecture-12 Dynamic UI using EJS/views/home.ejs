@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Navbar -->
+<%- include('partials/header') %> 
+
+  <!-- Hero Section -->
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-24 text-center">
+    <h1 class="text-6xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
+      Welcome to Airbnb
+    </h1>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+      Find unique places to stay or earn money by hosting your home.
+    </p>
+
+    <!-- Main CTA Button -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/host/add-home"
+        class="bg-[#FF5A5F] hover:bg-[#FF4248] text-white text-lg font-semibold px-10 py-5 rounded-3xl transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+        <span>Become a Host</span>
+        <span class="text-2xl">🏠</span>
+      </a>
+
+      <a href="/host/my-listings"
+        class="border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 text-lg font-semibold px-10 py-5 rounded-3xl transition-all duration-200">
+        Browse Listed Homes
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

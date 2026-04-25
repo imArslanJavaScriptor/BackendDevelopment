@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>airbnb listings</title>
+  <link rel="stylesheet" href="/output.css">
+
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-[#FF5A5F] rounded-2xl flex items-center justify-center">
+          <span class="text-white text-3xl font-bold leading-none">A</span>
+        </div>
+        <span class="text-2xl font-semibold text-gray-900">airbnb</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+        <a href="/"
+          class="px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-2xl transition">Home</a>
+        <a href="/host/add-home"
+          class="px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-2xl transition">Add Home</a>
+        <a href="/host/my-listings"
+          class="px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 rounded-2xl transition">Homes
+          Listing</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Listing Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
+  <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 text-center">
+    Check out our registered homes
+  </h2>
+
+  <ul class="flex flex-col gap-3 max-w-[300px] mx-auto">
+    <% registeredHomes.forEach(home=> {%>
+      <li>
+        <!-- Card Container -->
+        <div class="bg-white shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 p-4 rounded-[10px]">
+           <h3 class="text-xl md:text-2xl font-semibold text-gray-900 ">
+              <%= home.houseName %>
+            </h3>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+
+  <!-- Empty State (Optional) -->
+  <% if (registeredHomes.length === 0) { %>
+    <div class="text-center py-8">
+      <p class="text-gray-500 text-lg">No Home Registered Yet</p>
+    </div>
+  <% } %>
+</section>
+
+</body>
+
+</html>

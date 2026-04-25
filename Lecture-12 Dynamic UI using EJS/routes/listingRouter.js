@@ -3,14 +3,14 @@ const path = require("path")
 
 // External Modules
 const express = require("express");
-const userRouter = express.Router();
+const listingRouter = express.Router();
 
 // Local Module
 const { registeredHomes } = require("./hostRouter");
 
-userRouter.get("/", (req, res, next) => {
+listingRouter.get("/my-listings", (req, res, next) => {
   console.log(registeredHomes)
-  res.render("home", {registeredHomes, pageTitle: "airbnb Home"});
+  res.render("listings", {registeredHomes})
 });
 
-module.exports = userRouter;
+module.exports = listingRouter;
