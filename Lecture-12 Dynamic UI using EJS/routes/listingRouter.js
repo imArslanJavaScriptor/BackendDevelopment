@@ -10,7 +10,7 @@ const { registeredHomes } = require("./hostRouter");
 
 listingRouter.get("/my-listings", (req, res, next) => {
   console.log(registeredHomes)
-  res.render("listings", {registeredHomes})
+  res.render("listings", {pageTitle: "Home Listings", registeredHomes})
 });
 
 module.exports = listingRouter;

@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>airbnb listings</title>
-  <link rel="stylesheet" href="/output.css">
-
-</head>
+  <%- include('partials/head')%>
 
 <body class="bg-gray-50 min-h-screen">
 
@@ -39,18 +33,46 @@
     Check out our registered homes
   </h2>
 
-  <ul class="flex flex-col gap-3 max-w-[300px] mx-auto">
-    <% registeredHomes.forEach(home=> {%>
-      <li>
-        <!-- Card Container -->
-        <div class="bg-white shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105 p-4 rounded-[10px]">
-           <h3 class="text-xl md:text-2xl font-semibold text-gray-900 ">
-              <%= home.houseName %>
-            </h3>
+<ul class="grid grid-cols-1 gap-8 max-w-[400px] mx-auto p-6">
+  <% registeredHomes.forEach(home => { %>
+    <li class="group">
+      <div class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-2 p-8 relative">
+        <div class="absolute top-0 left-0 w-full">
+          <img src="<%= home.image %>" alt="<%= home.houseName %>" class="w-full h-full object-cover" />
         </div>
-      </li>
-    <% }) %>
-  </ul>
+        
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+            <%= home.houseName %>
+          </h3>
+          <span class="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-2 py-1 rounded-lg text-xs font-bold">
+            ⭐ <%= home.rating %>
+          </span>
+        </div>
+
+        <div class="flex items-center gap-1 text-gray-500 text-sm mb-4">
+          <%= home.location %>
+        </div>
+
+        <div class="border-t border-gray-50"></div>
+
+        <div class="flex items-center justify-between mt-6">
+          <div>
+            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Price</p>
+            <p class="text-2xl font-black text-gray-900">
+              $<%= home.price %><span class="text-sm font-normal text-gray-500">/Night</span>
+            </p>
+          </div>
+          
+          <button class="bg-[#FF5A5F] text-white px-6 py-3 rounded-2xl text-sm font-medium hover:bg-[#FF4248] transition-colors shadow-lg shadow-gray-200">
+            View Details
+          </button>
+        </div>
+
+      </div>
+    </li>
+  <% }) %>
+</ul>
 
   <!-- Empty State (Optional) -->
   <% if (registeredHomes.length === 0) { %>
