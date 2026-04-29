@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "houseName": "Utsav",
+    "price": "1299",
+    "location": "Ghaziabad",
+    "rating": "4",
+    "photoUrl": "/images/house1.png"
+  },
+  {
+    "id": "2",
+    "houseName": "Second House",
+    "price": "999",
+    "location": "Ghaziabad",
+    "rating": "4",
+    "photoUrl": "/images/house2.png"
+  },
+  {
+    "houseName": "New Home",
+    "price": "400",
+    "location": "Pakistan",
+    "rating": "10",
+    "photoUrl": "/images/house3.png",
+    "id": "0.6454153143386521"
+  }
+]
